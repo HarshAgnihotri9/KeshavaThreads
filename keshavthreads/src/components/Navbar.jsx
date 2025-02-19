@@ -4,7 +4,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 p-4">
+    <nav className="bg-gray-900 p-4 z-20 ">
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         {/* Logo */}
         <div className="text-white font-serif text-2xl cursor-default pl-2">
