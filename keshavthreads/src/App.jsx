@@ -1,29 +1,26 @@
-import { useState } from 'react'
-import './App.css'
-import Navbar from './components/Navbar'
-import MainPage from './components/MainPage'
-import TShirtGrid from './components/tShirt'
-import KeshavVastramBanner from './components/Banner'
-import KeshavVastramGallery from './components/KeshavVastramGallery'
-import ProductPage from './components/ProductPage'
-import SummerCollection from './components/SummerCollection'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import MainPage from "./components/MainPage";
+import KeshavVastramGallery from "./components/KeshavVastramGallery";
+import ProductPage from "./components/ProductPage";
+import SummerCollection from "./components/SummerCollection";
+import Footer from "./components/Footer";
+import AboutPage from "./components/NavbarComponents/About";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-<>
-<Navbar/>
-<MainPage/>
-<TShirtGrid/>
-{/* <KeshavVastramBanner/> */}
-<KeshavVastramGallery/>
-<SummerCollection/>
-<Footer/>
-{/* <ProductPage/> */}
-</>
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/About" element={<AboutPage />} />
+        <Route path="/gallery" element={<KeshavVastramGallery />} />
+        <Route path="/collection" element={<SummerCollection />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;

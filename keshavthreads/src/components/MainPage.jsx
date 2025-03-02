@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import TShirtGrid from "./tShirt";
+import KeshavVastramGallery from "./KeshavVastramGallery";
+import SummerCollection from "./SummerCollection";
+import ScrollingCarousel from "./ScrollingCorousel";
 
 const categories = [
     "Graphic Tees",
@@ -58,9 +62,9 @@ const MainPage = () => {
 
   return (
     <>
-    <div className="flex flex-col md:flex-row  bg-white">
+    <div className="flex flex-col md:flex-row  bg-white mt-20 ">
       {/* Sidebar (Now Full Height) */}
-      <aside className="hidden md:flex flex-col w-1/5 bg-white p-6 border-r justify-between items-center">
+      <aside className="hidden md:flex flex-col w-1/5 bg-white p-6 border-r justify-between items-center  ">
   <ul className="space-y-4">
     {categories.map((category, index) => (
       <li
@@ -78,27 +82,27 @@ const MainPage = () => {
 
 
       {/* Main Content */}
-      <main className="flex-1 p-8 flex flex-col items-center z-0">
+      <main className="flex-1 p-8 flex flex-col items-center z-0 ">
         {/* Banner */}
-        <div className="relative w-full bg-black text-white rounded-xl overflow-hidden p-10 flex flex-col items-center md:flex-row justify-between group">
+        <div className="relative w-full bg-black text-white rounded-xl overflow-hidden pl-10 flex flex-col items-center md:flex-row justify-between group h-96 ">
           <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold">T shirt of your own style</h2>
+            <h2 className="text-3xl font-bold  mt-10 md:mt-0">T shirt of your own style</h2>
             <p className="text-xl mt-2">Up to 10% off Voucher</p>
             <button className="mt-4 px-6 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition">
               Shop Now →
             </button>
           </div>
           <img 
-            src="/boy.png" 
+            src="/girl3.png" 
             alt="T-shirt Model" 
-            className="w-2/3 md:w-1/2 transition-transform duration-300 ease-in-out transform group-hover:scale-110 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:rotate-1 "
+            className="w-2/3 md:w-1/2 transition-transform duration-300 ease-in-out  group-hover:shadow-2xl md:mt-20 "
             />
         </div>
       </main>
     </div>
     <section>
     <div
-      className={`flex flex-col items-start space-y-0 sm:space-y-0 p-0 ml-0 min-w-[700px] ${isTall ? 'pl-24' : ''}`}
+      className={`flex flex-col items-start space-y-0 sm:space-y-0 p-0 ml-0 sm:pl-20  ${isTall ? 'pl-0' : ''}`}
     >
     {/* Today's Flash Sales Header */}
     <div className="flex items-center space-x-2">
@@ -133,8 +137,10 @@ const MainPage = () => {
     </div>
   </div>
 </section>
-
-
+<TShirtGrid/>
+<KeshavVastramGallery/>
+<SummerCollection/>
+<ScrollingCarousel/>
             </>
   );
 };
